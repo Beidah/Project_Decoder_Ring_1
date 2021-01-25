@@ -16,6 +16,10 @@ const caesarModule = (function () {
       const letter_idx = alphabet.indexOf(char);
       if (letter_idx != -1) {
         let cypher_idx = (letter_idx + shift) % 26;
+        if (cypher_idx < 0) {
+          console.log(cypher_idx);
+          cypher_idx = 26 + cypher_idx;
+        }
         encoded_text += alphabet[cypher_idx];
       } else {
         encoded_text += input[i];
