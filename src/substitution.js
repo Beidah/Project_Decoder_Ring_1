@@ -40,7 +40,8 @@ const substitutionModule = (function () {
     for (let i = 0; i < input.length; i++) {
       const char = input[i];
       const charIdx = alphabet.indexOf(char);
-      if (charIdx != 1) {
+      console.log(`${char}: ${charIdx}`);
+      if (charIdx != -1) {
         plaintext += plaintext_alphabet[charIdx];
       } else {
         plaintext += char;
@@ -54,7 +55,7 @@ const substitutionModule = (function () {
     // your solution code here
     input = input.toLowerCase();
 
-    if (invalidSubstitutionAlphabet(alphabet)) {
+    if (!alphabet || invalidSubstitutionAlphabet(alphabet)) {
       return false;
     }
 
